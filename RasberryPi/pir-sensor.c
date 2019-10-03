@@ -16,7 +16,7 @@
 #define MIN_INTERVAL          10 * 1000
 
 
-//------------------- Module parameters -------------------------------------
+//Module parameters
 
 static int gpio_trigger = DEFAULT_GPIO_TRIGGER;
 module_param(gpio_trigger, int, 0644);
@@ -26,7 +26,7 @@ static DECLARE_WAIT_QUEUE_HEAD(read_wait_queue);
 
 
 
-// ------------------ Driver private data type ------------------------------
+//Driver private data type
 
 struct pir_sensor_struct {
     struct timeval last_timestamp;
@@ -36,7 +36,7 @@ struct pir_sensor_struct {
 
 
 
-// ------------------ Driver private methods -------------------------------
+//Driver private methods
 
 static int pir_sensor_open (struct inode * ind, struct file * filp)
 {
@@ -154,7 +154,7 @@ static irqreturn_t gpio_trigger_handler(int irq, void * arg)
 
 
 
-// ------------------ Driver private global data ----------------------------
+//Driver private global data
 
 static struct file_operations pir_sensor_fops = {
     .owner   =  THIS_MODULE,
@@ -174,7 +174,7 @@ static struct miscdevice pir_sensor_driver = {
 
 
 
-// ------------------ Driver init and exit methods --------------------------
+//Driver init and exit methods
 
 static int __init pir_sensor_init (void)
 {
