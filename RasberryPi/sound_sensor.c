@@ -10,7 +10,7 @@
 #include <linux/version.h>
 #include <linux/uaccess.h>
 
-#define DEFAULT_GPIO_TRIGGER  16 // Pin 12 on Raspberry Pi P1 connector.
+#define DEFAULT_GPIO_TRIGGER  16
 
 // Minimal interval between two read() in microsec
 #define MIN_INTERVAL          10 * 1000
